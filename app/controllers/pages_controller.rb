@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
 	before_action :find_page, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@pages = Page.all.order("created_at DESC")

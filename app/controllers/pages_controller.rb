@@ -11,11 +11,11 @@ class PagesController < ApplicationController
 	end
 
 	def new
-		@page = Page.new
+		@page = current_user.pages.build
 	end
 
 	def create
-		@page = Page.new(page_params)
+		@page = current_user.pages.build(page_params)
 
 		if @page.save
 			redirect_to @page

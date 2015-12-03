@@ -1,1 +1,4 @@
-%h2 Index placeholder
+%h2 Index
+
+- @pages.each do |page|
+	%h1= link_to page.name, page
